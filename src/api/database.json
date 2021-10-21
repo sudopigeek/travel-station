@@ -1,0 +1,78 @@
+{
+  "users": [
+    {
+      "id": 0,
+      "name": "John Smith",
+      "email": "johnsmith@gmail.com",
+      "password": "Ilovecamping123",
+      "isAdmin": false
+    },
+    {
+        "id": 1,
+        "name": "Mark Latham",
+        "email": "markl@gmail.com",
+        "password": "CampMan1",
+        "isAdmin": false
+    }
+  ],
+  "userReservations": [
+    {
+      "id": 0,
+      "userId": 0,
+      "datePlaced": "2021/03/05",
+      "dateFrom": "2021/03/07",
+      "dateTo": "2021/03/09",
+      "campingSpotId": 0
+    },
+    {
+      "id": 1,
+      "userId": 1,
+      "datePlaced": "2021/03/04",
+      "dateFrom": "2021/03/10",
+      "dateTo": "2021/03/12",
+      "campingSpotId": 0
+    }
+  ],
+  "campingSpots": [
+    {
+      "id": 0,
+      "pricePerNight": 35,
+      "spotTypeId": 2,
+      "name": "A7",
+      "hasElectric": true,
+      "hasSeptic": true,
+      "hasWater": true
+    },
+    {
+        "id": 1,
+        "pricePerNight": 25,
+        "spotTypeId": 0,
+        "name": "B4",
+        "hasElectric": true,
+        "hasSeptic": false,
+        "hasWater": true
+    }
+  ],
+  "spotTypes": [
+    {
+      "id": 0,
+      "type": "Tent"
+    },
+    {
+      "id": 1,
+      "type": "Large Tent"
+    },
+    {
+      "id": 2,
+      "type": "RV"
+    },
+    {
+      "id": 3,
+      "type": "Large RV"
+    },
+    {
+      "id": 4,
+      "type": "5th Wheel"
+    }
+  ]
+}
