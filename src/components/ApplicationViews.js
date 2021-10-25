@@ -10,7 +10,7 @@ export const ApplicationViews = ({ isAuthenticated, setAuthUser }) => {
     return (
         <>
             <Route path="/reserveSite">
-                {isAuthenticated ? <ReserveSite /> : <Redirect to="/signin" />}
+                {isAuthenticated ? <ReserveSite /> : <Login setAuthUser={setAuthUser} destination="/reserveSite" />}
             </Route>
             <Route path="/reservations">
                 {isAuthenticated ? <Reservations /> : <Redirect to="/signin" />}
@@ -19,7 +19,7 @@ export const ApplicationViews = ({ isAuthenticated, setAuthUser }) => {
                 <Home />
             </Route>
             <Route path="/signin">
-                <Login setAuthUser={setAuthUser} />
+                <Login setAuthUser={setAuthUser} destination="/" />
             </Route>
             <Route path="/register">
                 <Register />

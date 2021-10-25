@@ -18,7 +18,7 @@
   "userReservations": [
     {
       "id": 0,
-      "userId": 0,
+      "userId": 2,
       "datePlaced": "2021/03/05",
       "dateFrom": "2021/03/07",
       "dateTo": "2021/03/09",

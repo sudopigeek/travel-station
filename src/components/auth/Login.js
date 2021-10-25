@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import "./Login.css";
 
-export const Login = ({ setAuthUser }) => {
+export const Login = ({ setAuthUser, destination }) => {
     const [loginUser, setLoginUser] = useState({ email: "", password: "" });
     const [existDialog, setExistDialog] = useState(false);
 
@@ -25,8 +25,8 @@ export const Login = ({ setAuthUser }) => {
         e.preventDefault();
         existingUserCheck().then((exists) => {
             if (exists) {
-                setAuthUser(exists.name)
-                history.push("/");
+                setAuthUser(exists.name, exists.id)
+                history.push(destination);
             } else {
                 setExistDialog(true);
             }
