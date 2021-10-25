@@ -8,49 +8,563 @@
       "isAdmin": false
     },
     {
-        "id": 1,
-        "name": "Mark Latham",
-        "email": "markl@gmail.com",
-        "password": "CampMan1",
-        "isAdmin": false
+      "id": 1,
+      "name": "Mark Latham",
+      "email": "markl@gmail.com",
+      "password": "CampMan1",
+      "isAdmin": false
     }
   ],
   "userReservations": [
     {
-      "id": 0,
       "userId": 2,
-      "datePlaced": "2021/03/05",
-      "dateFrom": "2021/03/07",
-      "dateTo": "2021/03/09",
-      "campingSpotId": 0
-    },
-    {
-      "id": 1,
-      "userId": 1,
-      "datePlaced": "2021/03/04",
-      "dateFrom": "2021/03/10",
-      "dateTo": "2021/03/12",
-      "campingSpotId": 0
+      "datePlaced": "2021-10-25T15:57",
+      "dateFrom": "2021-10-26T15:57",
+      "dateTo": "2021-11-02T15:57",
+      "campingSpotId": 58,
+      "id": 1
     }
   ],
   "campingSpots": [
     {
-      "id": 0,
+      "id": 58,
+      "pricePerNight": 25,
+      "spotTypeId": 0,
+      "name": "B1",
+      "hasElectric": true,
+      "hasSeptic": false,
+      "hasWater": true
+    },
+    {
+      "id": 59,
+      "pricePerNight": 25,
+      "spotTypeId": 0,
+      "name": "B2",
+      "hasElectric": true,
+      "hasSeptic": false,
+      "hasWater": true
+    },
+    {
+      "id": 60,
+      "pricePerNight": 25,
+      "spotTypeId": 0,
+      "name": "B3",
+      "hasElectric": true,
+      "hasSeptic": false,
+      "hasWater": true
+    },
+    {
+      "id": 1,
+      "pricePerNight": 25,
+      "spotTypeId": 0,
+      "name": "B4",
+      "hasElectric": true,
+      "hasSeptic": false,
+      "hasWater": true
+    },
+    {
+      "pricePerNight": 25,
+      "spotTypeId": 0,
+      "name": "B5",
+      "hasElectric": true,
+      "hasSeptic": false,
+      "hasWater": true,
+      "id": 2
+    },
+    {
+      "pricePerNight": 25,
+      "spotTypeId": 0,
+      "name": "B6",
+      "hasElectric": true,
+      "hasSeptic": false,
+      "hasWater": true,
+      "id": 3
+    },
+    {
+      "pricePerNight": 25,
+      "spotTypeId": 0,
+      "name": "B7",
+      "hasElectric": true,
+      "hasSeptic": false,
+      "hasWater": true,
+      "id": 4
+    },
+    {
+      "pricePerNight": 25,
+      "spotTypeId": 0,
+      "name": "B8",
+      "hasElectric": true,
+      "hasSeptic": false,
+      "hasWater": true,
+      "id": 5
+    },
+    {
+      "pricePerNight": 25,
+      "spotTypeId": 0,
+      "name": "B9",
+      "hasElectric": true,
+      "hasSeptic": false,
+      "hasWater": true,
+      "id": 6
+    },
+    {
+      "pricePerNight": 25,
+      "spotTypeId": 0,
+      "name": "B10",
+      "hasElectric": true,
+      "hasSeptic": false,
+      "hasWater": true,
+      "id": 7
+    },
+    {
+      "pricePerNight": 35,
+      "spotTypeId": 2,
+      "name": "A1",
+      "hasElectric": true,
+      "hasSeptic": false,
+      "hasWater": true,
+      "id": 8
+    },
+    {
+      "pricePerNight": 35,
+      "spotTypeId": 2,
+      "name": "A2",
+      "hasElectric": true,
+      "hasSeptic": false,
+      "hasWater": true,
+      "id": 9
+    },
+    {
+      "pricePerNight": 35,
+      "spotTypeId": 2,
+      "name": "A3",
+      "hasElectric": true,
+      "hasSeptic": false,
+      "hasWater": true,
+      "id": 10
+    },
+    {
+      "pricePerNight": 35,
+      "spotTypeId": 2,
+      "name": "A4",
+      "hasElectric": true,
+      "hasSeptic": false,
+      "hasWater": true,
+      "id": 11
+    },
+    {
+      "pricePerNight": 35,
+      "spotTypeId": 2,
+      "name": "A5",
+      "hasElectric": true,
+      "hasSeptic": false,
+      "hasWater": true,
+      "id": 12
+    },
+    {
+      "pricePerNight": 35,
+      "spotTypeId": 2,
+      "name": "A6",
+      "hasElectric": true,
+      "hasSeptic": false,
+      "hasWater": true,
+      "id": 13
+    },
+    {
       "pricePerNight": 35,
       "spotTypeId": 2,
       "name": "A7",
       "hasElectric": true,
-      "hasSeptic": true,
-      "hasWater": true
+      "hasSeptic": false,
+      "hasWater": true,
+      "id": 14
     },
     {
-        "id": 1,
-        "pricePerNight": 25,
-        "spotTypeId": 0,
-        "name": "B4",
-        "hasElectric": true,
-        "hasSeptic": false,
-        "hasWater": true
+      "pricePerNight": 35,
+      "spotTypeId": 2,
+      "name": "A8",
+      "hasElectric": true,
+      "hasSeptic": false,
+      "hasWater": true,
+      "id": 15
+    },
+    {
+      "pricePerNight": 35,
+      "spotTypeId": 2,
+      "name": "A9",
+      "hasElectric": true,
+      "hasSeptic": false,
+      "hasWater": true,
+      "id": 16
+    },
+    {
+      "pricePerNight": 35,
+      "spotTypeId": 2,
+      "name": "A10",
+      "hasElectric": true,
+      "hasSeptic": false,
+      "hasWater": true,
+      "id": 17
+    },
+    {
+      "pricePerNight": 45,
+      "spotTypeId": 2,
+      "name": "C1",
+      "hasElectric": true,
+      "hasSeptic": true,
+      "hasWater": true,
+      "id": 18
+    },
+    {
+      "pricePerNight": 45,
+      "spotTypeId": 2,
+      "name": "C2",
+      "hasElectric": true,
+      "hasSeptic": true,
+      "hasWater": true,
+      "id": 19
+    },
+    {
+      "pricePerNight": 45,
+      "spotTypeId": 2,
+      "name": "C3",
+      "hasElectric": true,
+      "hasSeptic": true,
+      "hasWater": true,
+      "id": 20
+    },
+    {
+      "pricePerNight": 45,
+      "spotTypeId": 2,
+      "name": "C4",
+      "hasElectric": true,
+      "hasSeptic": true,
+      "hasWater": true,
+      "id": 21
+    },
+    {
+      "pricePerNight": 45,
+      "spotTypeId": 2,
+      "name": "C5",
+      "hasElectric": true,
+      "hasSeptic": true,
+      "hasWater": true,
+      "id": 22
+    },
+    {
+      "pricePerNight": 45,
+      "spotTypeId": 2,
+      "name": "C6",
+      "hasElectric": true,
+      "hasSeptic": true,
+      "hasWater": true,
+      "id": 23
+    },
+    {
+      "pricePerNight": 45,
+      "spotTypeId": 2,
+      "name": "C7",
+      "hasElectric": true,
+      "hasSeptic": true,
+      "hasWater": true,
+      "id": 24
+    },
+    {
+      "pricePerNight": 45,
+      "spotTypeId": 2,
+      "name": "C8",
+      "hasElectric": true,
+      "hasSeptic": true,
+      "hasWater": true,
+      "id": 25
+    },
+    {
+      "pricePerNight": 45,
+      "spotTypeId": 2,
+      "name": "C9",
+      "hasElectric": true,
+      "hasSeptic": true,
+      "hasWater": true,
+      "id": 26
+    },
+    {
+      "pricePerNight": 45,
+      "spotTypeId": 2,
+      "name": "C10",
+      "hasElectric": true,
+      "hasSeptic": true,
+      "hasWater": true,
+      "id": 27
+    },
+    {
+      "pricePerNight": 55,
+      "spotTypeId": 3,
+      "name": "D1",
+      "hasElectric": true,
+      "hasSeptic": true,
+      "hasWater": true,
+      "id": 28
+    },
+    {
+      "pricePerNight": 55,
+      "spotTypeId": 3,
+      "name": "D2",
+      "hasElectric": true,
+      "hasSeptic": true,
+      "hasWater": true,
+      "id": 29
+    },
+    {
+      "pricePerNight": 55,
+      "spotTypeId": 3,
+      "name": "D3",
+      "hasElectric": true,
+      "hasSeptic": true,
+      "hasWater": true,
+      "id": 30
+    },
+    {
+      "pricePerNight": 55,
+      "spotTypeId": 3,
+      "name": "D4",
+      "hasElectric": true,
+      "hasSeptic": true,
+      "hasWater": true,
+      "id": 31
+    },
+    {
+      "pricePerNight": 55,
+      "spotTypeId": 3,
+      "name": "D5",
+      "hasElectric": true,
+      "hasSeptic": true,
+      "hasWater": true,
+      "id": 32
+    },
+    {
+      "pricePerNight": 55,
+      "spotTypeId": 3,
+      "name": "D6",
+      "hasElectric": true,
+      "hasSeptic": true,
+      "hasWater": true,
+      "id": 33
+    },
+    {
+      "pricePerNight": 55,
+      "spotTypeId": 3,
+      "name": "D7",
+      "hasElectric": true,
+      "hasSeptic": true,
+      "hasWater": true,
+      "id": 34
+    },
+    {
+      "pricePerNight": 55,
+      "spotTypeId": 3,
+      "name": "D8",
+      "hasElectric": true,
+      "hasSeptic": true,
+      "hasWater": true,
+      "id": 35
+    },
+    {
+      "pricePerNight": 55,
+      "spotTypeId": 3,
+      "name": "D9",
+      "hasElectric": true,
+      "hasSeptic": true,
+      "hasWater": true,
+      "id": 36
+    },
+    {
+      "pricePerNight": 55,
+      "spotTypeId": 3,
+      "name": "D10",
+      "hasElectric": true,
+      "hasSeptic": true,
+      "hasWater": true,
+      "id": 37
+    },
+    {
+      "pricePerNight": 45,
+      "spotTypeId": 1,
+      "name": "E1",
+      "hasElectric": true,
+      "hasSeptic": false,
+      "hasWater": true,
+      "id": 38
+    },
+    {
+      "pricePerNight": 45,
+      "spotTypeId": 1,
+      "name": "E2",
+      "hasElectric": true,
+      "hasSeptic": false,
+      "hasWater": true,
+      "id": 39
+    },
+    {
+      "pricePerNight": 45,
+      "spotTypeId": 1,
+      "name": "E3",
+      "hasElectric": true,
+      "hasSeptic": false,
+      "hasWater": true,
+      "id": 40
+    },
+    {
+      "pricePerNight": 45,
+      "spotTypeId": 1,
+      "name": "E4",
+      "hasElectric": true,
+      "hasSeptic": false,
+      "hasWater": true,
+      "id": 41
+    },
+    {
+      "pricePerNight": 45,
+      "spotTypeId": 1,
+      "name": "E5",
+      "hasElectric": true,
+      "hasSeptic": false,
+      "hasWater": true,
+      "id": 42
+    },
+    {
+      "pricePerNight": 45,
+      "spotTypeId": 1,
+      "name": "E6",
+      "hasElectric": true,
+      "hasSeptic": false,
+      "hasWater": true,
+      "id": 43
+    },
+    {
+      "pricePerNight": 45,
+      "spotTypeId": 1,
+      "name": "E7",
+      "hasElectric": true,
+      "hasSeptic": false,
+      "hasWater": true,
+      "id": 44
+    },
+    {
+      "pricePerNight": 45,
+      "spotTypeId": 1,
+      "name": "E8",
+      "hasElectric": true,
+      "hasSeptic": false,
+      "hasWater": true,
+      "id": 45
+    },
+    {
+      "pricePerNight": 45,
+      "spotTypeId": 1,
+      "name": "E9",
+      "hasElectric": true,
+      "hasSeptic": false,
+      "hasWater": true,
+      "id": 46
+    },
+    {
+      "pricePerNight": 45,
+      "spotTypeId": 1,
+      "name": "E10",
+      "hasElectric": true,
+      "hasSeptic": false,
+      "hasWater": true,
+      "id": 47
+    },
+    {
+      "pricePerNight": 60,
+      "spotTypeId": 4,
+      "name": "F1",
+      "hasElectric": true,
+      "hasSeptic": true,
+      "hasWater": true,
+      "id": 48
+    },
+    {
+      "pricePerNight": 60,
+      "spotTypeId": 4,
+      "name": "F2",
+      "hasElectric": true,
+      "hasSeptic": true,
+      "hasWater": true,
+      "id": 49
+    },
+    {
+      "pricePerNight": 60,
+      "spotTypeId": 4,
+      "name": "F3",
+      "hasElectric": true,
+      "hasSeptic": true,
+      "hasWater": true,
+      "id": 50
+    },
+    {
+      "pricePerNight": 60,
+      "spotTypeId": 4,
+      "name": "F4",
+      "hasElectric": true,
+      "hasSeptic": true,
+      "hasWater": true,
+      "id": 51
+    },
+    {
+      "pricePerNight": 60,
+      "spotTypeId": 4,
+      "name": "F5",
+      "hasElectric": true,
+      "hasSeptic": true,
+      "hasWater": true,
+      "id": 52
+    },
+    {
+      "pricePerNight": 60,
+      "spotTypeId": 4,
+      "name": "F6",
+      "hasElectric": true,
+      "hasSeptic": true,
+      "hasWater": true,
+      "id": 53
+    },
+    {
+      "pricePerNight": 60,
+      "spotTypeId": 4,
+      "name": "F7",
+      "hasElectric": true,
+      "hasSeptic": true,
+      "hasWater": true,
+      "id": 54
+    },
+    {
+      "pricePerNight": 60,
+      "spotTypeId": 4,
+      "name": "F8",
+      "hasElectric": true,
+      "hasSeptic": true,
+      "hasWater": true,
+      "id": 55
+    },
+    {
+      "pricePerNight": 60,
+      "spotTypeId": 4,
+      "name": "F9",
+      "hasElectric": true,
+      "hasSeptic": true,
+      "hasWater": true,
+      "id": 56
+    },
+    {
+      "pricePerNight": 60,
+      "spotTypeId": 4,
+      "name": "F10",
+      "hasElectric": true,
+      "hasSeptic": true,
+      "hasWater": true,
+      "id": 57
     }
   ],
   "spotTypes": [
