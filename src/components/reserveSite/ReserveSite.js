@@ -85,8 +85,7 @@ export const ReserveSite = () => {
             resObj.campingSpotId = matchingSpots[0].id;
             console.log(resObj);
             createReservation(resObj).then(res => {
-                history.push("/");
-                //<Redirect to="/" />
+                history.push("/reservations");
             })
         })        
     }
