@@ -5,6 +5,11 @@ export const getUserById = (userId) => {
   .then(res => res.json())
 }
 
+export const getUserByName = (userName) => {
+    return fetch(`${remoteURL}/users?name=${encodeURI(userName)}`)
+    .then(res => res.json())
+  }
+
 export const getAllUsers = () => {
   return fetch(`${remoteURL}/users`)
   .then(res => res.json())
