@@ -25,7 +25,7 @@ export const Login = ({ setAuthUser, destination }) => {
         e.preventDefault();
         existingUserCheck().then((exists) => {
             if (exists) {
-                setAuthUser(exists.name, exists.id)
+                setAuthUser(exists.name, exists.id, exists.isAdmin)
                 history.push(destination);
             } else {
                 setExistDialog(true);

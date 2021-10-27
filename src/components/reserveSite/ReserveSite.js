@@ -1,5 +1,5 @@
 import React from "react";
-import { Redirect, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { getAllCampingSpots, getAllReservations, createReservation } from "../../modules/APIManager";
 import { validateDate } from "../../modules/Dates";
 
@@ -83,7 +83,6 @@ export const ReserveSite = () => {
             }
             if (matchingSpots.length === 0) {window.alert("There aren't any available camping spots with the selected date and amenities.")}
             resObj.campingSpotId = matchingSpots[0].id;
-            console.log(resObj);
             createReservation(resObj).then(res => {
                 history.push("/reservations");
             })

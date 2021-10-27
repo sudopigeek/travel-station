@@ -35,6 +35,12 @@ export const createReservation = (reservationObj) => {
 	}).then(response => response.json())
 }
 
+export const deleteReservation = (reservationId) => {
+  return fetch(`${remoteURL}/userReservations/${reservationId}`, {
+		method: "DELETE"
+	}).then(response => response.json())
+}
+
 export const getCampingSpotsByType = (spotTypeId) => {
   return fetch(`${remoteURL}/campingSpots?_expand=spotType&spotTypeId=${spotTypeId}`)
     .then(res => res.json())
