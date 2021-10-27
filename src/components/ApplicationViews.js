@@ -5,6 +5,7 @@ import { Register } from "./auth/Register"
 import { Home } from "./Home"
 import { Reservations } from "./reservations/ReservationList"
 import { ReserveSite } from "./reserveSite/ReserveSite"
+import { Account } from "./account/Account"
 
 export const ApplicationViews = ({ isAuthenticated, setAuthUser }) => {
     return (
@@ -18,11 +19,14 @@ export const ApplicationViews = ({ isAuthenticated, setAuthUser }) => {
             <Route exact path="/">
                 <Home />
             </Route>
+            <Route path="/account">
+                <Account />
+            </Route>
             <Route path="/signin">
                 <Login setAuthUser={setAuthUser} destination="/" />
             </Route>
             <Route path="/register">
-                <Register />
+                <Register setAuthUser={setAuthUser} destination="/" />
             </Route>
         </>
     )
