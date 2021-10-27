@@ -1,9 +1,9 @@
 import React from "react"
-import { Route, Redirect } from "react-router-dom"
+import { Route } from "react-router-dom"
 import { Login } from "./auth/Login"
 import { Register } from "./auth/Register"
 import { Home } from "./Home"
-import { Reservations } from "./reservations/Reservations"
+import { Reservations } from "./reservations/ReservationList"
 import { ReserveSite } from "./reserveSite/ReserveSite"
 
 export const ApplicationViews = ({ isAuthenticated, setAuthUser }) => {
@@ -13,7 +13,7 @@ export const ApplicationViews = ({ isAuthenticated, setAuthUser }) => {
                 {isAuthenticated ? <ReserveSite /> : <Login setAuthUser={setAuthUser} destination="/reserveSite" />}
             </Route>
             <Route path="/reservations">
-                {isAuthenticated ? <Reservations /> : <Redirect to="/signin" />}
+                {isAuthenticated ? <Reservations /> : <Login setAuthUser={setAuthUser} destination="/reservations" />}
             </Route>
             <Route exact path="/">
                 <Home />

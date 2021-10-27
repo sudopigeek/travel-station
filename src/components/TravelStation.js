@@ -4,13 +4,14 @@ import { NavBar } from "./nav/NavBar"
 import { useHistory } from "react-router-dom";
 
 export const TravelStation = () => {
-    const [isAuthenticated, setIsAuthenticated] = useState(sessionStorage.getItem("user") !== null)
+    const [isAuthenticated, setIsAuthenticated] = useState(sessionStorage.getItem("user") !== null);
 
     const history = useHistory();
 
-    const setAuthUser = (user, id) => {
+    const setAuthUser = (user, id, admin) => {
         sessionStorage.setItem("user", user);
         sessionStorage.setItem("userId", id);
+        sessionStorage.setItem("isAdmin", admin)
         setIsAuthenticated(sessionStorage.getItem("user") !== null);
     }
 
