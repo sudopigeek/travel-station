@@ -46,6 +46,11 @@ export const getCampingSpotsByType = (spotTypeId) => {
     .then(res => res.json())
 }
 
+export const getCampingSpotType = (spotTypeId) => {
+  return fetch(`${remoteURL}/spotTypes?id=${spotTypeId}`)
+    .then(res => res.json())
+}
+
 export const getAllCampingSpots = () => {
   return fetch(`${remoteURL}/campingSpots?_expand=spotType`)
     .then(res => res.json())
