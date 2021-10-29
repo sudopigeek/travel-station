@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
-import { getAllCampingSpots, getAllReservations, createReservation } from "../../modules/APIManager";
+import { getAllCampingSpots, getAllReservations, createReservation, getAllSpotTypes } from "../../modules/APIManager";
 import { validateDate } from "../../modules/Dates";
 
 export const ReserveSite = () => {
+    const [spotTypes, setSpotTypes] = useState([]);
     const history = useHistory();
     const getTimes = (elements) => {
         const date = new Date()
@@ -53,7 +54,7 @@ export const ReserveSite = () => {
         })
         getAllReservations().then(reservations => {
             // Next, filter through all reservations and ensure the entered time frame doesn't collide with the iterated reservation,
-            // and then filter through the returned reservations and set resArray with the 
+            // and then filter through the returned reservations and set resArray with the spots that don't contain spot ids from resArr:
             if (reservations.length > 0) {
                 const resArr = Array.from(reservations).filter((reservation) => { return validateDate(reservation.dateFrom, reservation.dateTo, resObj.dateFrom, resObj.dateTo) === true })
                 const resArray = matchingSpots.filter(spot => { return containsId(resArr, spot.id) === false })
@@ -73,25 +74,28 @@ export const ReserveSite = () => {
             }
         })
     }
+    const getSpotTypes = () => {
+        getAllSpotTypes().then(types => {
+            setSpotTypes(types);
+        })
+    }
+    useEffect(() => {
+        getSpotTypes();
+    }, [])
 
-    // get form element info from db, not harcoded
     return (
         <main className="container--reserveSite">
             <section>
                 <form className="form--reserveSite" onSubmit={handleReservation}>
                     <h1>Reserve a Campsite</h1>
-                    <section className="form--spotType">
-                        <h4>Camping Spot Type:</h4>
-                        <label htmlFor="tent">Tent</label>
-                        <input type="radio" id="tent" required name="spotType" value="Tent" /><br />
-                        <label htmlFor="l_tent">Large Tent</label>
-                        <input type="radio" id="l_tent" required name="spotType" value="Large Tent" /><br />
-                        <label htmlFor="rv">RV</label>
-                        <input type="radio" id="rv" required name="spotType" value="RV" /><br />
-                        <label htmlFor="l_rv">Large RV</label>
-                        <input type="radio" id="l_rv" required name="spotType" value="Large RV" /><br />
-                        <label htmlFor="5th_wheel">5th Wheel</label>
-                        <input type="radio" id="5th_wheel" required name="spotType" value="5th Wheel" /><br />
+                    <h4>Camping Spot Type:</h4>
+                    <section className="form--spotType"> 
+                        {spotTypes.length > 0 ? spotTypes.map((spot, index) => 
+                        <>
+                            <label key={index + spot.id} htmlFor={spot.type.toLowerCase()}>{spot.type}</label>
+                            <input type="radio" id={spot.type.toLowerCase()} required name="spotType" value={spot.type} /><br />
+                        </>
+                        ):null}
                     </section>
                     <section className="form--amenities">
                         <h4>Amenities:</h4>
