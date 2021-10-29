@@ -22,10 +22,15 @@ export const TravelStation = () => {
         history.push("/");
     }
 
+    const handleEdit = id => {
+        //event.preventDefault();
+        history.push(`/reservations/${id}/edit`);
+    }
+
     return (
         <>
             <NavBar handleLogout={handleLogout} isAuthenticated={isAuthenticated} user={sessionStorage.getItem("user")} />
-            <ApplicationViews isAuthenticated={isAuthenticated} setAuthUser={setAuthUser} />     
+            <ApplicationViews isAuthenticated={isAuthenticated} handleEdit={handleEdit} setAuthUser={setAuthUser} />     
         </>
     );
 }

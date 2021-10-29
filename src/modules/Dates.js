@@ -72,6 +72,11 @@ export const ConvertDateTime = (objString, use12HrFormat) => {
     }  
 }
 
+export const YYYYMMDD_To_MMDDYYYY = (dateStr) => {
+    const date = dateStr.split('-');
+    return date[1] + "/" + date[2] + "/" + date[0];
+}
+
 export const parseDate = (str) => {
     var mdy = str.split('-')
     return new Date(mdy[0], mdy[1]-1, mdy[2]);

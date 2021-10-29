@@ -1,9 +1,8 @@
 import React from 'react';
 import { ConvertDate, daydiff, parseDate } from "../../modules/Dates";
 
-export const ReservationCard = ({ admin, spotType, cancel, reservation }) => {
+export const ReservationCard = ({ admin, spotType, cancel, handleEdit, reservation }) => {
     const foundType = spotType.find((type) => type.id === reservation.campingSpot.spotTypeId)
-    console.log(foundType);
     return (
         <fieldset className="reservation--card">
             {admin === true ? <h2>Name: {reservation.user.name}</h2> : null}
@@ -21,6 +20,10 @@ export const ReservationCard = ({ admin, spotType, cancel, reservation }) => {
             </section>
             <section className="card--modifiers">
                 <button type="button" onClick={() => cancel(reservation.id)}>Cancel Reservation</button>
+                <button type="button" onClick={() => handleEdit(reservation.id)}>Edit Date</button>
+                {/* <Link to={`/reservations/${reservation.id}/edit`}>
+                    <button>Edit Date</button>
+                </Link> */}
             </section>
         </fieldset>
     );
