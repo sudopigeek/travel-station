@@ -89,14 +89,13 @@ export const ReserveSite = () => {
                 <form className="form--reserveSite" onSubmit={handleReservation}>
                     <h1>Reserve a Campsite</h1>
                     <h4>Camping Spot Type:</h4>
-                    <section className="form--spotType"> 
+                    
                         {spotTypes.length > 0 ? spotTypes.map((spot, index) => 
-                        <>
-                            <label key={index + spot.id} htmlFor={spot.type.toLowerCase()}>{spot.type}</label>
-                            <input type="radio" id={spot.type.toLowerCase()} required name="spotType" value={spot.type} /><br />
-                        </>
-                        ):null}
-                    </section>
+                            <section key={index} className="form--spotType"> 
+                                <label key={index + spot.id} htmlFor={spot.type.toLowerCase()}>{spot.type}</label>
+                                <input type="radio" id={spot.type.toLowerCase()} required name="spotType" value={spot.type} /><br />
+                            </section>
+                        ):null}          
                     <section className="form--amenities">
                         <h4>Amenities:</h4>
                         <label htmlFor="electric">Electric</label>
