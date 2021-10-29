@@ -24,18 +24,20 @@
   ],
   "userReservations": [
     {
-      "id": 1,
-      "datePlaced": "2021-10-28",
+      "id": 3,
+      "datePlaced": "2021-10-29",
       "dateFrom": "2021-11-02",
-      "dateTo": "2021-11-12",
-      "campingSpotId": 8
+      "dateTo": "2021-11-08",
+      "userId": 3,
+      "campingSpotId": 58
     },
     {
-      "id": 2,
-      "datePlaced": "2021-10-28",
-      "dateFrom": "2021-11-02",
-      "dateTo": "2021-11-07",
-      "campingSpotId": 58
+      "userId": 3,
+      "datePlaced": "2021-10-29",
+      "dateFrom": "2021-11-04",
+      "dateTo": "2021-11-06",
+      "campingSpotId": 38,
+      "id": 4
     }
   ],
   "campingSpots": [
