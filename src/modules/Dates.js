@@ -1,5 +1,4 @@
 const toNumbers = arr => { return arr.map((i) => Number(i)) }
-
 export const validateDate = (dateFromString, dateToString, dateFromString1, dateToString1) => {
     let datefrom1 = dateFromString.split('T')[0];
     let dateto1 = dateToString.split('T')[0];
@@ -15,12 +14,10 @@ export const validateDate = (dateFromString, dateToString, dateFromString1, date
         }
     }
 }
-
 export const GetCurrentDate = () => {
     const cDate = new Date()
     return ConvertDate(cDate.toISOString().split('T')[0])
 }
-
 // dateString must be formatted as YYYY-MM-DD
 export const ConvertDate = (dateString) => {
     let elements = dateString.split("-")
@@ -37,7 +34,6 @@ export const ConvertDate = (dateString) => {
     }
     return output
 }
-
 export const ConvertTimeTo12Hr = (timeString) => {
     let content = toNumbers(timeString.split(':'));
     let output = "";
@@ -52,7 +48,6 @@ export const ConvertTimeTo12Hr = (timeString) => {
     }
     return output;
 }
-
 export const GetDateDuration = (dateFromString, dateToString) => {
     let datefrom = toNumbers(dateFromString.split('T')[0].split('-'));
     let dateto = toNumbers(dateToString.split('T')[0].split('-'));
@@ -68,7 +63,6 @@ export const GetDateDuration = (dateFromString, dateToString) => {
     console.log(duration)
     //return duration; NOT WORKING
 }
-
 export const ConvertDateTime = (objString, use12HrFormat) => {
     let content = objString.split('T');
     if (use12HrFormat) {
@@ -77,6 +71,21 @@ export const ConvertDateTime = (objString, use12HrFormat) => {
         return ConvertDate(content[0]) + " " + content[1];
     }  
 }
+
+export const YYYYMMDD_To_MMDDYYYY = (dateStr) => {
+    const date = dateStr.split('-');
+    return date[1] + "/" + date[2] + "/" + date[0];
+}
+
+export const parseDate = (str) => {
+    var mdy = str.split('-')
+    return new Date(mdy[0], mdy[1]-1, mdy[2]);
+}
+
+export const daydiff = (first, second) => {
+    return Math.round((second-first)/(1000*60*60*24));
+}
+
 const Month = [
     "January",
     "February",

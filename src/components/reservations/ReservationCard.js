@@ -1,23 +1,29 @@
-import React from "react";
-import { ConvertDateTime } from "../../modules/Dates";
+import React from 'react';
+import { ConvertDate, daydiff, parseDate } from "../../modules/Dates";
 
-export const ReservationCard = ({ admin, cancel, reservation }) => {
+export const ReservationCard = ({ admin, spotType, cancel, handleEdit, reservation }) => {
+    const foundType = spotType.find((type) => type.id === reservation.campingSpot.spotTypeId)
     return (
         <fieldset className="reservation--card">
             {admin === true ? <h2>Name: {reservation.user.name}</h2> : null}
             <section className="card--dates">
-                <h5>Placed: {ConvertDateTime(reservation.datePlaced, true)}</h5>
-                <h5>Start: {ConvertDateTime(reservation.dateFrom, true)}</h5>
-                <h5>End: {ConvertDateTime(reservation.dateTo, true)}</h5>
+                <h5>Placed: {ConvertDate(reservation.datePlaced)}</h5>
+                <h5>Start: {ConvertDate(reservation.dateFrom)}</h5>
+                <h5>End: {ConvertDate(reservation.dateTo)}</h5>
             </section>
             <section className="card--spotInfo">
                 <p>Spot Name: {reservation.campingSpot.name}</p>
+                <p>Spot Type: {foundType?.type}</p>
             </section>
             <section className="card--reservation">
-                <p>Price Per Night: ${reservation.campingSpot.pricePerNight}</p>
+                <p>Price: ${daydiff(parseDate(reservation.dateFrom), parseDate(reservation.dateTo)) * parseInt(reservation.campingSpot.pricePerNight)}</p>
             </section>
             <section className="card--modifiers">
                 <button type="button" onClick={() => cancel(reservation.id)}>Cancel Reservation</button>
+                <button type="button" onClick={() => handleEdit(reservation.id)}>Edit Date</button>
+                {/* <Link to={`/reservations/${reservation.id}/edit`}>
+                    <button>Edit Date</button>
+                </Link> */}
             </section>
         </fieldset>
     );

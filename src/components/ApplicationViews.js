@@ -6,18 +6,22 @@ import { Home } from "./Home"
 import { Reservations } from "./reservations/ReservationList"
 import { ReserveSite } from "./reserveSite/ReserveSite"
 import { Account } from "./account/Account"
+import { ReservationEditForm } from "./reservations/ReservationEditForm"
 
-export const ApplicationViews = ({ isAuthenticated, setAuthUser }) => {
+export const ApplicationViews = ({ isAuthenticated, setAuthUser, handleEdit }) => {
     return (
         <>
             <Route path="/reserveSite">
                 {isAuthenticated ? <ReserveSite /> : <Login setAuthUser={setAuthUser} destination="/reserveSite" />}
             </Route>
-            <Route path="/reservations">
-                {isAuthenticated ? <Reservations /> : <Login setAuthUser={setAuthUser} destination="/reservations" />}
+            <Route exact path="/reservations">
+                {isAuthenticated ? <Reservations handleEdit={handleEdit} /> : <Login setAuthUser={setAuthUser} destination="/reservations" />}
             </Route>
             <Route exact path="/">
                 <Home />
+            </Route>
+            <Route path="/reservations/:reservationId(\d+)/edit">
+                {isAuthenticated ? <ReservationEditForm /> : <Login setAuthUser={setAuthUser} destination="/reservations" />}
             </Route>
             <Route path="/account">
                 <Account />

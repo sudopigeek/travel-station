@@ -25,6 +25,11 @@ export const getAllReservations = () => {
     .then(res => res.json())
 }
 
+export const getReservationById = (resId) => {
+  return fetch(`${remoteURL}/userReservations?&id=${resId}`)
+    .then(res => res.json())
+}
+
 export const createReservation = (reservationObj) => {
   return fetch(`${remoteURL}/userReservations`, {
 		method: "POST",
@@ -35,6 +40,17 @@ export const createReservation = (reservationObj) => {
 	}).then(response => response.json())
 }
 
+export const updateReservation = (resObj) => {
+	return fetch(`${remoteURL}/userReservations/${resObj.id}`, {
+		method: "PUT",
+		headers: {
+			"Content-Type": "application/json"
+		},
+		body: JSON.stringify(resObj)
+	}).then(data => data.json());
+}
+
+
 export const deleteReservation = (reservationId) => {
   return fetch(`${remoteURL}/userReservations/${reservationId}`, {
 		method: "DELETE"
@@ -43,6 +59,11 @@ export const deleteReservation = (reservationId) => {
 
 export const getCampingSpotsByType = (spotTypeId) => {
   return fetch(`${remoteURL}/campingSpots?_expand=spotType&spotTypeId=${spotTypeId}`)
+    .then(res => res.json())
+}
+
+export const getCampingSpotType = (spotTypeId) => {
+  return fetch(`${remoteURL}/spotTypes?id=${spotTypeId}`)
     .then(res => res.json())
 }
 

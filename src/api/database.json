@@ -13,23 +13,36 @@
       "email": "markl@gmail.com",
       "password": "CampMan1",
       "isAdmin": true
+    },
+    {
+      "email": "samuelcatferrell@gmail.com",
+      "name": "Samuel Ferrell",
+      "password": "aaaa",
+      "isAdmin": false,
+      "id": 3
     }
   ],
   "userReservations": [
     {
-      "userId": 2,
-      "datePlaced": "2021-10-27T10:22",
-      "dateFrom": "2021-11-28T10:21",
-      "dateTo": "2022-01-08T10:22",
-      "campingSpotId": 18,
-      "id": 3
+      "id": 1,
+      "datePlaced": "2021-10-28",
+      "dateFrom": "2021-11-02",
+      "dateTo": "2021-11-12",
+      "campingSpotId": 8
+    },
+    {
+      "id": 2,
+      "datePlaced": "2021-10-28",
+      "dateFrom": "2021-11-02",
+      "dateTo": "2021-11-07",
+      "campingSpotId": 58
     }
   ],
   "campingSpots": [
     {
       "id": 58,
       "pricePerNight": 25,
-      "spotTypeId": 0,
+      "spotTypeId": 5,
       "name": "B1",
       "hasElectric": true,
       "hasSeptic": false,
@@ -38,7 +51,7 @@
     {
       "id": 59,
       "pricePerNight": 25,
-      "spotTypeId": 0,
+      "spotTypeId": 5,
       "name": "B2",
       "hasElectric": true,
       "hasSeptic": false,
@@ -47,7 +60,7 @@
     {
       "id": 60,
       "pricePerNight": 25,
-      "spotTypeId": 0,
+      "spotTypeId": 5,
       "name": "B3",
       "hasElectric": true,
       "hasSeptic": false,
@@ -56,7 +69,7 @@
     {
       "id": 1,
       "pricePerNight": 25,
-      "spotTypeId": 0,
+      "spotTypeId": 5,
       "name": "B4",
       "hasElectric": true,
       "hasSeptic": false,
@@ -64,7 +77,7 @@
     },
     {
       "pricePerNight": 25,
-      "spotTypeId": 0,
+      "spotTypeId": 5,
       "name": "B5",
       "hasElectric": true,
       "hasSeptic": false,
@@ -73,7 +86,7 @@
     },
     {
       "pricePerNight": 25,
-      "spotTypeId": 0,
+      "spotTypeId": 5,
       "name": "B6",
       "hasElectric": true,
       "hasSeptic": false,
@@ -82,7 +95,7 @@
     },
     {
       "pricePerNight": 25,
-      "spotTypeId": 0,
+      "spotTypeId": 5,
       "name": "B7",
       "hasElectric": true,
       "hasSeptic": false,
@@ -91,7 +104,7 @@
     },
     {
       "pricePerNight": 25,
-      "spotTypeId": 0,
+      "spotTypeId": 5,
       "name": "B8",
       "hasElectric": true,
       "hasSeptic": false,
@@ -100,7 +113,7 @@
     },
     {
       "pricePerNight": 25,
-      "spotTypeId": 0,
+      "spotTypeId": 5,
       "name": "B9",
       "hasElectric": true,
       "hasSeptic": false,
@@ -109,7 +122,7 @@
     },
     {
       "pricePerNight": 25,
-      "spotTypeId": 0,
+      "spotTypeId": 5,
       "name": "B10",
       "hasElectric": true,
       "hasSeptic": false,
@@ -569,7 +582,7 @@
   ],
   "spotTypes": [
     {
-      "id": 0,
+      "id": 5,
       "type": "Tent"
     },
     {
