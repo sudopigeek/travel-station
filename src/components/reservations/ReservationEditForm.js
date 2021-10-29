@@ -4,7 +4,7 @@ import { getReservationById, updateReservation } from "../../modules/APIManager"
 import { ConvertDate } from "../../modules/Dates";
 
 export const ReservationEditForm = () => {
-    const [reservation, setReservation] = useState({id: 0, datePlaced: "", dateFrom: "", dateTo: "", campingSpotId: 0});
+    const [reservation, setReservation] = useState({id: 0, datePlaced: "", dateFrom: "", dateTo: "", userId: 0, campingSpotId: 0});
     const [isLoading, setIsLoading] = useState(false);
     const {reservationId} = useParams();
     const history = useHistory();
@@ -16,7 +16,7 @@ export const ReservationEditForm = () => {
     const updateRes = event => {
         event.preventDefault();
         setIsLoading(true);
-        const editedReservation = {id: reservation[0].id, datePlaced: reservation[0].datePlaced, dateFrom: reservation[0].dateFrom, dateTo: reservation[0].dateTo, campingSpotId: reservation[0].campingSpotId};
+        const editedReservation = {id: reservation[0].id, datePlaced: reservation[0].datePlaced, dateFrom: reservation[0].dateFrom, dateTo: reservation[0].dateTo, userId: parseInt(sessionStorage.getItem("userId")), campingSpotId: reservation[0].campingSpotId};
         updateReservation(editedReservation).then(() => {
             history.push("/reservations");
         })
