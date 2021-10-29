@@ -4,11 +4,15 @@ Travel Station is an RV park management app in [React](https://reactjs.org/) tha
 
 ### To Install:
 
-To install, simply download the `main` branch, open the folder in your terminal, and run `npm install` to install the necessary packages.
+1 - To install, simply download the `main` branch, open the folder in your terminal, and run `npm install` to install the necessary packages.
+
+2 - If json-server isn't installed, install it with [json-server](https://github.com/typicode/json-server) with `npm install -g json-server`.
 
 ### To Run:
 
-Navigate to the root directory of the repo and run `npm start` to start a development server.
+1 - Navigate to the root directory of the repo, enter the `src/api` directory, and run `json-server -p 8088 -w database.json`.
+
+2 - Return to the repo's root directory and run `npm start` to start a development server.
 
 ### To Build:
 
