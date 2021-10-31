@@ -36,7 +36,7 @@ export const Reservations = ({ handleEdit }) => {
     return (
         <main className="reservations--container">
             {admin === "undefined" || admin === "false" ? <h2>Your Reservations:</h2> : <h2>Campsite Reservations:</h2>}
-            {reservations.length > 0 ? reservations.map(reservation => <ReservationCard spotType={spotTypes} key={reservation.id + reservation.userId} handleEdit={handleEdit} cancel={cancelReservation} admin={admin === "undefined" || admin === "false" ? false : true} reservation={reservation} />) : <p>There aren't any reservations!</p>}
+            {reservations.length > 0 ? reservations.reverse().map(reservation => <ReservationCard spotType={spotTypes} key={reservation.id + reservation.userId} handleEdit={handleEdit} cancel={cancelReservation} admin={admin === "undefined" || admin === "false" ? false : true} reservation={reservation} />) : <p>There aren't any reservations!</p>}
         </main>
     );
 }

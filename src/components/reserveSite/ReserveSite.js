@@ -29,13 +29,12 @@ export const ReserveSite = () => {
         })
         return obj;
     }
-    const containsId = (reservationArray, id) => {
-        reservationArray.forEach(res => {
-            if (res.campingSpot.id === id) {
-                return true;
+    const RemoveBySpotName = (spotArray, spotName) => {
+        spotArray.forEach((spot, i) => {
+            if (spot.name === spotName) {
+                spotArray.splice(i, 1);
             }
         })
-        return false;
     }
     const handleReservation = (e) => {
         e.preventDefault();
@@ -53,19 +52,13 @@ export const ReserveSite = () => {
             })
         })
         getAllReservations().then(reservations => {
-            // Next, filter through all reservations and ensure the entered time frame doesn't collide with the iterated reservation,
-            // and then filter through the returned reservations and set resArray with the spots that don't contain spot ids from resArr:
-            if (reservations.length > 0) {
-                const resArr = Array.from(reservations).filter((reservation) => { return validateDate(reservation.dateFrom, reservation.dateTo, resObj.dateFrom, resObj.dateTo) === true })
-                const resArray = matchingSpots.filter(spot => { return containsId(resArr, spot.id) === false })
-                if (resArray.length === 0) {
-                    window.alert("There aren't any available camping spots with the selected date and amenities.")
-                } else {
-                    resObj.campingSpotId = resArray[0].id;
-                    createReservation(resObj).then(() => {
-                        history.push("/reservations");
-                    })
+            Array.from(reservations).forEach(reservation => {
+                if (!validateDate(reservation.dateFrom, reservation.dateTo, resObj.dateFrom, resObj.dateTo)) {
+                    RemoveBySpotName(matchingSpots, reservation.campingSpot.name);
                 }
+            })
+            if (matchingSpots.length === 0) {
+                alert("There aren't any available camping spots with the selected date and amenities.");
             } else {
                 resObj.campingSpotId = matchingSpots[0].id;
                 createReservation(resObj).then(() => {
