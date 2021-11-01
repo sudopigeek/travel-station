@@ -1,25 +1,22 @@
 {
   "users": [
     {
-      "id": 2,
-      "name": "John Smith",
-      "email": "johnsmith@gmail.com",
-      "password": "Ilovecamping123",
-      "isAdmin": false
-    },
-    {
       "id": 1,
       "name": "Mark Latham",
       "email": "markl@gmail.com",
-      "password": "CampMan1",
       "isAdmin": true
     },
     {
       "email": "samuelcatferrell@gmail.com",
       "name": "Samuel Ferrell",
-      "password": "aaaa",
       "isAdmin": false,
       "id": 3
+    },
+    {
+      "email": "jsmith@gmail.com",
+      "name": "John Smith",
+      "isAdmin": false,
+      "id": 4
     }
   ],
   "userReservations": [

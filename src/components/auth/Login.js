@@ -3,7 +3,7 @@ import { Link, useHistory } from "react-router-dom";
 import "./Login.css";
 
 export const Login = ({ setAuthUser, destination }) => {
-    const [loginUser, setLoginUser] = useState({ email: "", password: "" });
+    const [loginUser, setLoginUser] = useState("");
     const [existDialog, setExistDialog] = useState(false);
     const history = useHistory();
     const handleInputChange = (event) => {
@@ -39,11 +39,7 @@ export const Login = ({ setAuthUser, destination }) => {
                     <h2>{"Sign In"}</h2>
                     <section className="form--input">
                         <label htmlFor="inputEmail"> Email address </label>
-                        <input type="email" id="email" className="form-control" placeholder="Email address" required autoFocus value={loginUser.email} onChange={handleInputChange}/>
-                    </section>
-                    <section className="form--input">
-                        <label htmlFor="inputPassword"> Password </label>
-                        <input type="password" id="password" className="form-control" placeholder="Password" required autoFocus value={loginUser.password} onChange={handleInputChange}/>
+                        <input type="email" id="email" className="form-control" placeholder="Email address" required autoFocus value={loginUser} onChange={handleInputChange}/>
                     </section>
                     <section className="form--input">
                         <button type="submit">Sign in</button>
