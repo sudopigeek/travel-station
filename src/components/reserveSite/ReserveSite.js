@@ -37,36 +37,65 @@ export const ReserveSite = () => {
             }
         })
     }
+    const hasAmenities = (spotObj, amenitiesObj) => {
+        if (amenitiesObj.electric) {
+            if (!spotObj.hasElectric) {
+                return false;
+            }
+        }
+
+        if (amenitiesObj.water) {
+            if (!spotObj.hasWater) {
+                return false;
+            }
+        }
+
+        if (amenitiesObj.septic) {
+            if (!spotObj.hasSeptic) {
+                return false;
+            }
+        }
+        return true;
+    }
     const handleReservation = (e) => {
         e.preventDefault();
         const elements = Array.from(e.target);
         const spotType = elements.filter((elem) => { return elem.type === "radio" && elem.checked })[0].value;
         const times = getTimes(elements.filter((elem) => { return elem.type === "date" && (elem.id === "from" || elem.id === "to")}));
-        const matchingSpots = []
-        // First, define the return object with the current userId and entered dates:
-        const resObj = { userId: parseInt(sessionStorage.getItem("userId")), datePlaced: times.placed, dateFrom: times.from, dateTo: times.to, campingSpotId: null }
-        getAllCampingSpots().then(spots => {
-            // Then, filter through all camping spots, get the ones that have the selected amenities, and push them to matchingSpots:
-            const amenities = getAmenities(elements.filter((elem) => { return elem.type === "checkbox" }));
-            Array.from(spots).filter((spot) => { return spot.spotType.type === spotType && spot.hasElectric === amenities.electric && spot.hasSeptic === amenities.septic && spot.hasWater === amenities.water }).forEach(s => {
-                matchingSpots.push(s);
-            })
-        })
-        getAllReservations().then(reservations => {
-            Array.from(reservations).forEach(reservation => {
-                if (!validateDate(reservation.dateFrom, reservation.dateTo, resObj.dateFrom, resObj.dateTo)) {
-                    RemoveBySpotName(matchingSpots, reservation.campingSpot.name);
-                }
-            })
-            if (matchingSpots.length === 0) {
-                alert("There aren't any available camping spots with the selected date and amenities.");
-            } else {
-                resObj.campingSpotId = matchingSpots[0].id;
-                createReservation(resObj).then(() => {
-                    history.push("/reservations");
+        if (times.from > times.to) {
+            alert("The reservations' starting date cannot be after its ending date.");
+        } else {
+            const matchingSpots = []
+            // First, define the return object with the current userId and entered dates:
+            const resObj = { userId: parseInt(sessionStorage.getItem("userId")), datePlaced: times.placed, dateFrom: times.from, dateTo: times.to, campingSpotId: null }
+            getAllCampingSpots().then(spots => {
+                // Then, filter through all camping spots, get the ones that have the selected amenities, and push them to matchingSpots:
+                const amenities = getAmenities(elements.filter((elem) => { return elem.type === "checkbox" }));
+                //console.log(Array.from(spots).filter((spot) => { return spot.spotType.type === spotType && hasAmenities(spot, amenities)}))
+                Array.from(spots).filter((spot) => { return spot.spotType.type === spotType && hasAmenities(spot, amenities) }).forEach(s => {
+                    matchingSpots.push(s);
                 })
-            }
-        })
+                if (matchingSpots.length === 0) {
+                    alert("There aren't any available camping spots with the selected amenities.");
+                } else {
+                    getAllReservations().then(reservations => {
+                        Array.from(reservations).forEach(reservation => {
+                            if (!validateDate(reservation.dateFrom, reservation.dateTo, resObj.dateFrom, resObj.dateTo)) {
+                                RemoveBySpotName(matchingSpots, reservation.campingSpot.name);
+                            }
+                        })
+                        if (matchingSpots.length === 0) {
+                            alert("There aren't any available camping spots with the selected date and amenities.");
+                        } else {
+                            resObj.campingSpotId = matchingSpots[0].id;
+                            createReservation(resObj).then(() => {
+                                history.push("/reservations");
+                            })
+                        }
+                    })
+                }  
+            })
+        }       
     }
     const getSpotTypes = () => {
         getAllSpotTypes().then(types => {
