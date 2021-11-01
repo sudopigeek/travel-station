@@ -34,24 +34,24 @@ export const Login = ({ setAuthUser, destination }) => {
                 <div>{"User does not exist"}</div>
                 <button className="button--close" onClick={(e) => setExistDialog(false)}>Close</button>
             </dialog>
-            <section>
+            <section className="form">
                 <form className="form--login" onSubmit={handleLogin}>
                     <h2>{"Sign In"}</h2>
-                    <section>
-                        <label htmlFor="inputEmail">Email address   </label>
+                    <section className="form--input">
+                        <label htmlFor="inputEmail"> Email address </label>
                         <input type="email" id="email" className="form-control" placeholder="Email address" required autoFocus value={loginUser.email} onChange={handleInputChange}/>
                     </section>
-                    <section>
-                        <label htmlFor="inputPassword">Password   </label>
+                    <section className="form--input">
+                        <label htmlFor="inputPassword"> Password </label>
                         <input type="password" id="password" className="form-control" placeholder="Password" required autoFocus value={loginUser.password} onChange={handleInputChange}/>
                     </section>
-                    <section>
+                    <section className="form--input">
                         <button type="submit">Sign in</button>
                     </section>
                 </form>
-            </section>
-            <section className="link--register">
-                <Link to="/register">{"Register for an account"}</Link>
+                <section className="link--register">
+                    <Link to="/register">{"Register for an account"}</Link>
+                </section>
             </section>
         </main>
     );

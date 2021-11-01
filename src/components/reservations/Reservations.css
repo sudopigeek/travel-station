@@ -1,0 +1,41 @@
+.reservation--card {
+    width: 300px;
+    border-radius: 10px;
+    background-color: lightgray;
+}
+
+.reservations {
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+}
+
+#edit {
+    height: 30px;
+    background-color: white;
+    border-radius: 5px;
+    transition-duration: 0.3s;
+}
+
+#edit:hover {
+    background-color: rgb(49, 78, 143);
+    color: white;
+    cursor: pointer;
+}
+
+#cancel {
+    height: 30px;
+    background-color: white;
+    border-radius: 5px;
+    transition-duration: 0.3s;
+}
+
+#cancel:hover {
+    background-color: red;
+    color: white;
+    cursor: pointer;
+}
+
+#title {
+    text-align: center;
+}

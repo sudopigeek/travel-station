@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { getUserReservations, getAllReservations, deleteReservation, getAllSpotTypes } from "../../modules/APIManager";
 import { ReservationCard } from './ReservationCard';
+import './Reservations.css';
 
 export const Reservations = ({ handleEdit }) => {
     const [reservations, setReservations] = useState([]);
@@ -29,14 +30,17 @@ export const Reservations = ({ handleEdit }) => {
     }
     useEffect(() => {
         getReservations();
+        // eslint-disable-next-line
     }, []);
     useEffect(() => {
         populateSpotTypes();
     }, [reservations])
     return (
         <main className="reservations--container">
-            {admin === "undefined" || admin === "false" ? <h2>Your Reservations:</h2> : <h2>Campsite Reservations:</h2>}
-            {reservations.length > 0 ? reservations.reverse().map(reservation => <ReservationCard spotType={spotTypes} key={reservation.id + reservation.userId} handleEdit={handleEdit} cancel={cancelReservation} admin={admin === "undefined" || admin === "false" ? false : true} reservation={reservation} />) : <p>There aren't any reservations!</p>}
+            {admin === "undefined" || admin === "false" ? <h2 id="title">Your Reservations:</h2> : <h2 id="title">Campsite Reservations:</h2>}
+            <section className="reservations">
+                {reservations.length > 0 ? reservations.reverse().map(reservation => <ReservationCard spotType={spotTypes} key={reservation.id + reservation.userId} handleEdit={handleEdit} cancel={cancelReservation} admin={admin === "undefined" || admin === "false" ? false : true} reservation={reservation} />) : <p>There aren't any reservations!</p>}
+            </section> 
         </main>
     );
 }

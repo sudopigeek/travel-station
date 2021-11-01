@@ -27,7 +27,7 @@ export const ApplicationViews = ({ isAuthenticated, setAuthUser, handleEdit }) =
                 <Account />
             </Route>
             <Route path="/signin">
-                <Login setAuthUser={setAuthUser} destination="/" />
+                <Login setAuthUser={setAuthUser} destination="/reservations" />
             </Route>
             <Route path="/register">
                 <Register setAuthUser={setAuthUser} destination="/" />

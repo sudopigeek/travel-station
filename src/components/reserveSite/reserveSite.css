@@ -1,0 +1,40 @@
+.container--reserveSite {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Rubik', sans-serif;
+}
+
+.reserveSite {
+    text-align: center;
+    display: flex;
+    flex-flow: column nowrap;
+    width: 320px;
+    min-width: 320px;
+    background-color: lightgrey;
+    border-radius: 15px;
+    padding: 15px;
+}
+
+#from, #to, #submit {
+    margin-top: 5px;
+}
+
+#submit {
+    height: 30px;
+    background-color: white;
+    border-radius: 5px;
+    transition-duration: 0.3s;
+}
+
+#submit:hover {
+    background-color: green;
+    color: white;
+    cursor: pointer;
+}
+
+.form-submit {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}

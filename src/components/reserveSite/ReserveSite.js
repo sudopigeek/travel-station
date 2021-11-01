@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { getAllCampingSpots, getAllReservations, createReservation, getAllSpotTypes } from "../../modules/APIManager";
 import { validateDate } from "../../modules/Dates";
+import './reserveSite.css';
 
 export const ReserveSite = () => {
     const [spotTypes, setSpotTypes] = useState([]);
@@ -78,11 +79,10 @@ export const ReserveSite = () => {
 
     return (
         <main className="container--reserveSite">
-            <section>
+            <section className="reserveSite">
                 <form className="form--reserveSite" onSubmit={handleReservation}>
                     <h1>Reserve a Campsite</h1>
-                    <h4>Camping Spot Type:</h4>
-                    
+                    <h4>Camping Spot Type:</h4>         
                         {spotTypes.length > 0 ? spotTypes.map((spot, index) => 
                             <section key={index} className="form--spotType"> 
                                 <label key={index + spot.id} htmlFor={spot.type.toLowerCase()}>{spot.type}</label>
@@ -105,8 +105,8 @@ export const ReserveSite = () => {
                         <label htmlFor="to">Ending Date:</label>
                         <input type="date" required id="to" name="to" />
                     </section>
-                    <section className="form--submit">
-                        <button type="submit">Make Reservation</button>
+                    <section className="form-submit">
+                        <button id="submit" type="submit">Place Reservation</button>
                     </section>
                 </form>
             </section>

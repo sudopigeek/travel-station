@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { getUserByName } from "../../modules/APIManager"
+import './Account.css';
 
 export const Account = () => {
     const [account, setAccount] = useState({name: "", email: "", password: "", isAdmin: false});
@@ -19,15 +20,17 @@ export const Account = () => {
     }, [])
 
     return (
-        <main className="account">
-            {account.name !== "" ? 
-                <section>
-                    <h3>Name: {account.name}</h3>
-                    <p>Email: {account.email}</p>
-                    <p>Password: ********</p>
-                    <p>Account Type: {account.isAdmin ? <strong>Administrator</strong> : <strong>Visitor</strong>}</p>
-                </section> 
-            : null}
+        <main className="account--container">
+            <section className="account">
+                {account.name !== "" ? 
+                    <section>
+                        <h3>Name: {account.name}</h3>
+                        <p>Email: {account.email}</p>
+                        <p>Password: ********</p>
+                        <p>Account Type: {account.isAdmin ? <strong>Administrator</strong> : <strong>Visitor</strong>}</p>
+                    </section> 
+                : null}
+            </section>
         </main>
     );
 }

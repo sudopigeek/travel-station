@@ -23,7 +23,6 @@ export const TravelStation = () => {
     }
 
     const handleEdit = id => {
-        //event.preventDefault();
         history.push(`/reservations/${id}/edit`);
     }
 
