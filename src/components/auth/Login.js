@@ -7,13 +7,13 @@ export const Login = ({ setAuthUser, destination }) => {
     const [existDialog, setExistDialog] = useState(false);
     const history = useHistory();
     const handleInputChange = (event) => {
-        const newUser = { ...loginUser };
-        newUser[event.target.id] = event.target.value;
+        let newUser = loginUser;
+        newUser = event.target.value;
         setLoginUser(newUser);
     };
     const existingUserCheck = () => {
         // If your json-server URL is different, please change it below!
-        return fetch(`http://localhost:8088/users?email=${loginUser.email}`)
+        return fetch(`http://localhost:8088/users?email=${loginUser}`)
             .then((res) => res.json())
             .then((user) => (user.length ? user[0] : false));
     };
