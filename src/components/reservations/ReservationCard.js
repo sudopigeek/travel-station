@@ -1,5 +1,6 @@
 import React from 'react';
 import { ConvertDate, daydiff, parseDate } from "../../modules/Dates";
+import './Reservations.css'
 
 export const ReservationCard = ({ admin, spotType, cancel, handleEdit, reservation }) => {
     const foundType = spotType.find((type) => type.id === reservation.campingSpot.spotTypeId)
@@ -19,11 +20,8 @@ export const ReservationCard = ({ admin, spotType, cancel, handleEdit, reservati
                 <p>Price: ${daydiff(parseDate(reservation.dateFrom), parseDate(reservation.dateTo)) * parseInt(reservation.campingSpot.pricePerNight)}</p>
             </section>
             <section className="card--modifiers">
-                <button type="button" onClick={() => cancel(reservation.id)}>Cancel Reservation</button>
-                <button type="button" onClick={() => handleEdit(reservation.id)}>Edit Date</button>
-                {/* <Link to={`/reservations/${reservation.id}/edit`}>
-                    <button>Edit Date</button>
-                </Link> */}
+                <button id="edit" type="button" onClick={() => handleEdit(reservation.id)}>Edit Date</button>
+                <button id="cancel" type="button" onClick={() => cancel(reservation.id)}>Cancel Reservation</button>  
             </section>
         </fieldset>
     );

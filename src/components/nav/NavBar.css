@@ -1,10 +1,36 @@
 .navbar {
     display: flex;
     flex-wrap: nowrap;
-    justify-content: center;
+    align-items: center;
+    margin: 0;
+    background-color: white;
+    border-radius: 10px;
 }
 
 .navbar__item {
     flex-basis: 20%;
     list-style-type: none;
+    padding: 5px;
+    
+}
+
+.navbar__link {
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 10px;
+    font-family: 'Rubik', sans-serif;
+}
+
+.navbar__img {
+    width: 6%;
+    height: 6%;
+}
+
+.navbar__link:hover {
+    background-color: lightgray;
+    border: 1px solid green;
+}
+
+.navbar__link:visited {
+    color: black;
 }

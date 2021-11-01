@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { useParams, useHistory } from "react-router-dom";
+import { useParams, useHistory, Link } from "react-router-dom";
 import { getReservationById, updateReservation } from "../../modules/APIManager";
 import { ConvertDate } from "../../modules/Dates";
+import './ReservationEditForm.css';
 
 export const ReservationEditForm = () => {
     const [reservation, setReservation] = useState({id: 0, datePlaced: "", dateFrom: "", dateTo: "", userId: 0, campingSpotId: 0});
@@ -26,19 +27,25 @@ export const ReservationEditForm = () => {
             setReservation(res);
             setIsLoading(false);
         })
+    // eslint-disable-next-line
     }, [])
     return (
         <main className="editForm--container">
-            <section className="form--dates">
-                <h4>Edit Reservation Date:</h4>
-                <p>--- Reservation placed on {reservation[0] !== undefined ? ConvertDate(reservation[0].datePlaced) : ""} ---</p>
-                <label htmlFor="from">Starting Date:</label>
-                <input type="date" value={reservation[0] !== undefined ? reservation[0].dateFrom : ""} required id="dateFrom" name="from" onChange={handleFieldChange} /> <br />
-                <label htmlFor="to">Ending Date:</label>
-                <input type="date" value={reservation[0] !== undefined ? reservation[0].dateTo : ""} required id="dateTo" name="to" onChange={handleFieldChange} />
-            </section>
-            <section className="form--submit">
-                <button onClick={updateRes} disabled={isLoading} type="submit">Submit Changes</button>
+            <section className="editForm">
+                <section className="form--dates">
+                    <h4>Edit Reservation Date:</h4>
+                    <p>(Reservation placed on {reservation[0] !== undefined ? ConvertDate(reservation[0].datePlaced) : ""})</p>
+                    <label htmlFor="from">Starting Date:</label>
+                    <input type="date" value={reservation[0] !== undefined ? reservation[0].dateFrom : ""} required id="dateFrom" name="from" onChange={handleFieldChange} /> <br />
+                    <label htmlFor="to">Ending Date:</label>
+                    <input type="date" value={reservation[0] !== undefined ? reservation[0].dateTo : ""} required id="dateTo" name="to" onChange={handleFieldChange} />
+                </section>
+                <section className="form--submit">
+                    <Link to="/reservations">
+                        <button id="return">Return to Reservations</button>
+                    </Link>
+                    <button id="submit" onClick={updateRes} disabled={isLoading} type="submit">Submit Changes</button>
+                </section>
             </section>
         </main>
     );

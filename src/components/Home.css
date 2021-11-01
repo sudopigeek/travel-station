@@ -1,0 +1,35 @@
+.home {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Rubik', sans-serif;
+}
+
+.bookReservation {
+    display: flex;
+    flex-flow: row nowrap;
+    align-self: center;
+    align-items: center;
+    margin-top: 12%;
+    background-color: rgb(173, 206, 173);
+    border: 1px solid black;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.bookReservation > * {
+    padding: 10px;
+}
+
+.reservationBtn {
+    height: 30px;
+    background-color: white;
+    border-radius: 5px;
+    transition-duration: 0.3s;
+}
+
+.reservationBtn:hover {
+    background-color: rgb(49, 78, 143);
+    color: white;
+    cursor: pointer;
+}
