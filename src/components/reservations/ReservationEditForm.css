@@ -40,3 +40,8 @@
     color: white;
     cursor: pointer;
 }
+
+.dialog {
+    box-shadow: 5em;
+    border-radius: 5px;
+}

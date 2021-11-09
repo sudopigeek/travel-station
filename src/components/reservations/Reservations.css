@@ -1,7 +1,7 @@
 .reservation--card {
     width: 300px;
     border-radius: 10px;
-    background-color: lightgray;
+    background-color: rgba(158, 182, 150, 0.548);
     margin: 15px;
 }
 
