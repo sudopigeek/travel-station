@@ -17,7 +17,7 @@ export const ReservationCard = ({ admin, spotType, cancel, handleEdit, reservati
                 <p>Spot Type: {foundType?.type}</p>
             </section>
             <section className="card--reservation">
-                <p>Price: ${daydiff(parseDate(reservation.dateFrom), parseDate(reservation.dateTo)) * parseInt(reservation.campingSpot.pricePerNight)}</p>
+                <p>Total Price: ${daydiff(parseDate(reservation.dateFrom), parseDate(reservation.dateTo)) * parseInt(reservation.campingSpot.pricePerNight)}</p>
             </section>
             <section className="card--modifiers">
                 <button id="edit" type="button" onClick={() => handleEdit(reservation.id)}>Edit Date</button>
